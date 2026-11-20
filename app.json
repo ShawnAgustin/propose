@@ -1,0 +1,87 @@
+{
+  "expo": {
+    "name": "ProPose",
+    "slug": "propose",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "propose",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.sagustin.propose",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera access for testing"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#14110F",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.sagustin.propose",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO"
+      ]
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Shows the camera's tilt angle"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Pick photos to use as pose guides",
+          "cameraPermission": "Camera access for testing"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Pick photos to use as pose guides",
+          "savePhotosPermission": "Save your shots to a ProPose album in Photos",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#14110F",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 110
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "6d7809ea-adbf-48ca-ac66-acf56bf3da79"
+      }
+    }
+  }
+}
